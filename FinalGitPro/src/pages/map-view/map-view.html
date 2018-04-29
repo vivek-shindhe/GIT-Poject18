@@ -1,0 +1,38 @@
+<!--
+  Generated template for the MapViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-toolbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-searchbar style="height:100%;width:100%" [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Start typing to get Results"></ion-searchbar>
+
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+	<ion-list [hidden]="autocompleteItems.length==0">
+		<ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+			{{item.description}}
+		</ion-item>
+	</ion-list>
+	<div id="map"></div>
+	<div style="background-color:#fff" align="center" style="height:15%">
+
+			<ion-item no-lines>
+				<p style="margin:0px 10px 10px 10px">Sub Categories</p>
+				<ion-scroll scrollX="true">
+					<div class="scroll-item" *ngFor="let s of subCategories|async" (click)="selectCategoryLocations(s)" >
+						{{s}}
+					</div>
+				</ion-scroll>
+			</ion-item>
+
+	</div>
+</ion-content>

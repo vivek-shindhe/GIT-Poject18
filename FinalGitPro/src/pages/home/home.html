@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div align="center" >
+    <ion-slides >
+      <ion-slide style="max-height:35%">
+        <img src="assets/imgs/Food-Slider.jpg"/>
+      </ion-slide>
+      <ion-slide style="max-height:35%">
+        <img src="assets/imgs/Events-Slider.jpg"/>
+      </ion-slide>
+      <ion-slide style="max-height:35%">
+        <img src="assets/imgs/Taxi-Slider.jpg"/>
+      </ion-slide>
+      <ion-slide style="max-height:35%">
+        <img src="assets/imgs/Motels-Slider.jpg"/>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+  <div align="center">
+    <h4>Main Categories</h4>
+  </div>
+  <ion-list no-lines >
+		<ion-item *ngFor="let m of mainCategories" (click)="mapViewPage(m)" style="background-color:transparent">
+		  <ion-card>
+        <img src="{{'assets/imgs/'+m+'.jpg'}}" style="height:80%;" />
+
+      </ion-card>
+
+		</ion-item>
+  </ion-list>
+</ion-content>

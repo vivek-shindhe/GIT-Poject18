@@ -1,0 +1,26 @@
+page-map-view {
+
+	#map{
+		height:87%;
+	}
+	
+	ion-scroll[scrollX] {
+    white-space: nowrap;
+	height:30px;
+    overflow: hidden;
+	width:100%;
+	text-align: center;
+    
+	
+    .scroll-item {
+      display: inline-block;
+	  width:33%;
+	  border-right:0.15px solid #888888;
+	  vertical-align: middle;
+	  }
+	
+	}
+	
+
+
+}
